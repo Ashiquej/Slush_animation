@@ -1,0 +1,176 @@
+.footer-marquee-section {
+    width: 95%;
+    margin: 20px auto;
+    /* Gap between cards */
+    background: transparent;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-marquee-card {
+    background: #000;
+    width: 100%;
+    border-radius: 50px;
+    padding: 60px 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    /* Increased from 20px */
+}
+
+.marquee-row {
+    display: flex;
+    gap: 40px;
+    /* Increased horizontal gap */
+    width: max-content;
+    will-change: transform;
+}
+
+/* MARQUEE BLOCK 3D FLIP */
+.marquee-block-wrap {
+    width: 300px;
+    height: 150px;
+    /* Increased Height */
+    perspective: 1000px;
+}
+
+.marquee-block-inner {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    /* Increased Height */
+    text-align: center;
+    transition: transform 0.4s;
+    transform-style: preserve-3d;
+    transform-origin: center center;
+}
+
+.marquee-block-wrap:hover .marquee-block-inner {
+    transform: rotateX(90deg);
+    /* Flip Upward */
+}
+
+/* FACES */
+.marquee-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    /* Safari */
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    border-radius: 16px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* FRONT FACE (Color) */
+.marquee-face.front {
+    z-index: 2;
+    transform: translateZ(75px);
+    /* Half of 150px */
+}
+
+/* BACK FACE (White, Rotated) */
+.marquee-face.back {
+    background: #fff;
+    color: #000;
+    /* 
+       A standard box rotateX(90deg) brings the bottom face to front.
+       Wait, if I rotate 'inner' by 90deg, the 'bottom' face (which is 'back') needs to be pre-positioned.
+       
+       Standard specific 'Box Roll' setup:
+       Front: rotateX(0) translateZ(50px)
+       Bottom: rotateX(-90deg) translateZ(50px)
+       
+       When Inner rotates +90deg (Up/Back):
+       Front goes Top.
+       Bottom goes Front.
+    */
+    transform: rotateX(-90deg) translateZ(75px);
+    /* Half of 150px */
+    /* Pre-rotated to look down */
+    border: 2px solid #000;
+    /* Define border for white face visibility */
+    /* Adjust origin? */
+}
+
+/* IMPORTANT: Width/Height must match translateZ depth (half height) */
+/* Height = 100px. Half = 50px. Correct. */
+
+/* TEXT */
+.block-text {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: 60px;
+    line-height: 0.9;
+    font-style: italic;
+    text-transform: uppercase;
+    color: #000;
+    letter-spacing: -2px;
+}
+
+/* COLORS */
+.marquee-face.orange {
+    background: #ff4e00;
+}
+
+.marquee-face.blue {
+    background: #4da2ff;
+}
+
+.marquee-face.yellow {
+    background: #ffde2e;
+}
+
+.marquee-face.purple {
+    background: #e9c8ff;
+}
+
+.marquee-face.green {
+    background: #62E8A6;
+}
+
+/* ICONS */
+.block-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    position: absolute;
+    /* Sticker effect */
+    z-index: 10;
+    pointer-events: none;
+    /* Let clicks pass through if needed */
+}
+
+/* Sticker Positions */
+.icon-top-left {
+    top: -30px;
+    left: -20px;
+    transform: rotate(-15deg);
+}
+
+.icon-top-right {
+    top: -30px;
+    right: -20px;
+    transform: rotate(15deg);
+}
+
+.icon-bottom-left {
+    bottom: -30px;
+    left: -20px;
+    transform: rotate(15deg);
+}
+
+.icon-bottom-right {
+    bottom: -30px;
+    right: -20px;
+    transform: rotate(-15deg);
+}
+
+.block-icon.right {
+    order: 2;
+}

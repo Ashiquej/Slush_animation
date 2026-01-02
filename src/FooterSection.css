@@ -1,0 +1,165 @@
+.footer-section {
+    width: 95%;
+    /* Increased width */
+    margin: 40px auto;
+    display: flex;
+    gap: 80px;
+    align-items: stretch;
+    background: transparent;
+    color: #fff;
+}
+
+/* LEFT: SOCIAL GRID (2x2) */
+.footer-social-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 15px;
+    width: 300px;
+    /* Increased width */
+    flex-shrink: 0;
+}
+
+.social-card {
+    background: #fff;
+    border-radius: 30px;
+    /* Adjusted radius */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    aspect-ratio: 1;
+}
+
+.social-card:hover {
+    transform: scale(0.95);
+}
+
+.social-icon {
+    width: 45%;
+    height: 45%;
+    object-fit: contain;
+}
+
+/* RIGHT: GREEN CARD */
+.footer-green-card {
+    flex: 1;
+    background: #5EEAD4;
+    border-radius: 40px;
+    /* Slightly smaller radius */
+    padding: 40px;
+    /* Decreased padding */
+    display: flex;
+    flex-direction: column;
+    /* Stack top content and bottom row */
+    justify-content: space-between;
+    color: #000;
+}
+
+/* Wrapper for Header and Links */
+.footer-top-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 40px;
+    /* Decreased spacing */
+}
+
+.footer-main-text {
+    font-size: clamp(24px, 3vw, 45px);
+    /* Decreased font size */
+    font-weight: 900;
+    font-style: italic;
+    text-transform: uppercase;
+    line-height: 0.9;
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    letter-spacing: -1px;
+    max-width: 400px;
+}
+
+.footer-links-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    /* Decreased gap */
+    text-align: right;
+}
+
+.footer-nav-link {
+    font-size: 16px;
+    /* Decreased font size */
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+    transition: opacity 0.2s;
+}
+
+.footer-nav-link:hover {
+    opacity: 0.6;
+}
+
+/* Bottom Row now flows naturally */
+.footer-bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    width: 100%;
+    margin-top: auto;
+    /* Push to bottom if flex container grows */
+}
+
+/* For links in bottom row */
+.footer-bottom-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-bottom-link {
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+    .footer-section {
+        flex-direction: column;
+    }
+
+    .footer-social-grid {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .footer-green-card {
+        flex-direction: column;
+        gap: 60px;
+        align-items: center;
+        text-align: center;
+        padding-bottom: 100px;
+        /* Space for bottom row */
+    }
+
+    .footer-links-col {
+        align-items: center;
+        /* Center links on mobile */
+        text-align: center;
+    }
+
+    .footer-bottom-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        left: 0;
+        right: 0;
+        bottom: 30px;
+    }
+}

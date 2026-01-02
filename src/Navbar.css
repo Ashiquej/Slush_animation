@@ -1,0 +1,131 @@
+.topbar {
+  position: fixed;
+  top: 38px;
+  /* space below marquee + black strip */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  background: transparent;
+  /* PURE TRANSPARENCY */
+  border-radius: 60px;
+  z-index: 1000;
+}
+
+/* INNER */
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+}
+
+/* LOGO */
+.logo-circle {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+}
+
+.logo-circle img {
+  width: 22px;
+}
+
+/* LINKS */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 3D BUTTON */
+.nav-btn-3d {
+  perspective: 1200px;
+}
+
+.btn-inner {
+  width: 140px;
+  height: 44px;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+/* BUTTON FACES */
+.btn-face {
+  position: absolute;
+  inset: 0;
+  border-radius: 30px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  background: white;
+}
+
+.btn-front {
+  transform: translateZ(22px);
+}
+
+.btn-back {
+  transform: rotateX(-90deg) translateZ(22px);
+}
+
+/* COLORS */
+.color-0 .btn-back {
+  background: #eaff00;
+}
+
+.color-1 .btn-back {
+  background: #c6f6ff;
+}
+
+.color-2 .btn-back {
+  background: #c7ffd8;
+}
+
+.color-3 .btn-back {
+  background: #ffd6ff;
+}
+
+.color-4 .btn-back {
+  background: #ffd7b5;
+}
+
+.color-launch .btn-back {
+  background: black;
+  color: white;
+}
+
+/* PLUS */
+.plus-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid black;
+  background: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .topbar {
+    width: 98%;
+    top: 10px;
+  }
+
+  .nav-inner {
+    padding: 8px 12px;
+  }
+
+  /* Scale down buttons slightly if needed */
+  .btn-inner {
+    width: 110px;
+    height: 38px;
+  }
+}

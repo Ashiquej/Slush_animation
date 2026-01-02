@@ -1,0 +1,789 @@
+.defi-section-new {
+  width: 95%;
+  margin: 20px auto;
+  background: #fff;
+  border-radius: 40px;
+  padding: 60px 40px;
+  color: #000;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+/* =========================
+   HERO BLOCK
+========================= */
+
+.defi-hero {
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  padding: 0 20px;
+  margin-bottom: 0;
+  /* Let flex handle space, or keep small spacing if needed */
+}
+
+.defi-hero-content {
+  position: relative;
+  display: inline-block;
+}
+
+.defi-hero-title {
+  font-size: clamp(60px, 10vw, 140px);
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: -4px;
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.defi-floating-icon {
+  position: absolute;
+  width: 120px;
+  height: auto;
+  z-index: 1;
+}
+
+.rocket-left {
+  top: 50%;
+  left: -140px;
+  transform: translateY(-50%) rotate(-15deg);
+}
+
+.pig-right {
+  top: 50%;
+  right: -140px;
+  transform: translateY(-50%) rotate(15deg);
+}
+
+.defi-hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.defi-btn-white {
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 30px;
+  padding: 16px 32px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  color: #000;
+}
+
+.defi-btn-white:hover {
+  transform: scale(1.05);
+}
+
+.icon-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.edge-icon {
+  width: 20px;
+  height: 20px;
+  background: url('./assets/download.svg') no-repeat center/contain;
+  /* Ideally actual edge icon, using download as placeholder or just CSS circle */
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* =========================
+   FEATURE BLOCKS
+========================= */
+.defi-feature-block {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  margin-bottom: 150px;
+  justify-content: space-between;
+}
+
+.defi-feature-block.reverse {
+  flex-direction: row-reverse;
+}
+
+.defi-feature-text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.defi-feature-title {
+  font-size: 80px;
+  line-height: 0.9;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  margin-bottom: 30px;
+}
+
+.defi-feature-desc {
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.defi-feature-tagline {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.defi-feature-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.defi-pill-black {
+  background: #000;
+  color: #fff;
+  border-radius: 30px;
+  padding: 12px 28px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+
+.defi-pill-outline {
+  background: transparent;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 30px;
+  padding: 12px 28px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* =========================
+   VISUALS & PHONES
+========================= */
+.defi-feature-visual {
+  flex: 1;
+  border-radius: 30px;
+  overflow: visible;
+  /* Allow phone to pop out if needed, or contain */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 30px;
+  position: relative;
+  border: 2px solid #000;
+}
+
+.blue-theme {
+  background-color: #60A5FA;
+}
+
+/* Light Blue */
+.purple-theme {
+  background-color: #E9D5FF;
+}
+
+/* Lavender */
+.green-theme {
+  background-color: #4ADE80;
+}
+
+/* Green */
+.yellow-theme {
+  background-color: #FDE047;
+}
+
+/* Yellow */
+
+/* Phone Mockup Container */
+.defi-phone-mockup {
+  width: 300px;
+  background: #111;
+  /* Dark Phone Body */
+  border-radius: 40px;
+  padding: 12px;
+  box-shadow: 20px 20px 0px rgba(0, 0, 0, 1);
+  border: 3px solid #000;
+  position: relative;
+  transform: rotate(-2deg);
+}
+
+/* Screen base */
+.phone-screen-strat,
+.phone-screen-port,
+.phone-screen-opp,
+.phone-screen-stake {
+  background: #1a1a2e;
+  /* Dark App BG */
+  border-radius: 30px;
+  padding: 20px;
+  color: #fff;
+  overflow: hidden;
+  height: 600px;
+  /* Fixed height for consistency */
+  display: flex;
+  flex-direction: column;
+}
+
+/* -----------------------
+   UI: STRATEGIES (Blue)
+   ----------------------- */
+.strat-header {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+
+.p-pill {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.p-pill.active {
+  background: #6366f1;
+  color: #fff;
+}
+
+.strat-card.main {
+  background: #1e1e38;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.sc-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.sc-label {
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #aaa;
+}
+
+.sc-plus {
+  background: #333;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.sc-balance {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.sc-gain {
+  color: #4ade80;
+  font-size: 14px;
+}
+
+.strat-list {
+  margin-bottom: 10px;
+}
+
+.strat-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: #bbb;
+}
+
+.strat-item-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #252540;
+  padding: 12px;
+  border-radius: 16px;
+  margin-bottom: 4px;
+  justify-content: space-between;
+}
+
+.si-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.usdc {
+  background: #2775ca;
+}
+
+.sui {
+  background: #3b82f6;
+}
+
+.si-info {
+  text-align: left;
+}
+
+.si-name {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.si-sub {
+  font-size: 11px;
+  color: #888;
+}
+
+.si-right {
+  margin-left: auto;
+}
+
+.si-arr-r {
+  color: #666;
+}
+
+.strat-item-row.detail {
+  background: #2a2a46;
+  justify-content: space-between;
+  border-radius: 12px;
+  padding: 8px 12px;
+}
+
+.si-detail-val {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.text-green {
+  color: #4ade80;
+}
+
+.text-red {
+  color: #f87171;
+}
+
+
+/* -----------------------
+   UI: PORTFOLIO (Purple)
+   ----------------------- */
+.phone-screen-port {
+  background: #0d0d12;
+}
+
+.port-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.ph-label {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #888;
+}
+
+.ph-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.ph-icon {
+  background: #222;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.port-balance {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.port-gain {
+  font-size: 14px;
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+.port-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.pa-btn {
+  flex: 1;
+  background: #1f1f2e;
+  border-radius: 12px;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.pa-i {
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.pl-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.pl-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-right: 12px;
+  position: relative;
+}
+
+.verified {
+  color: #3b82f6;
+  font-size: 10px;
+  margin-left: 4px;
+}
+
+.pl-info {
+  text-align: left;
+  flex: 1;
+}
+
+.pl-name {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.pl-sub {
+  font-size: 12px;
+  color: #888;
+}
+
+.pl-val {
+  text-align: right;
+}
+
+.pl-amt {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.pl-tkn {
+  font-size: 12px;
+  color: #888;
+}
+
+.pl-more {
+  text-align: left;
+  font-size: 12px;
+  color: #6366f1;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pm-val {
+  color: #fff;
+}
+
+/* -----------------------
+   UI: OPPORTUNITIES (Green)
+   ----------------------- */
+.phone-screen-opp {
+  background: #0b0b14;
+}
+
+.opp-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.ot-label {
+  font-size: 10px;
+  color: #666;
+  letter-spacing: 1px;
+}
+
+.ot-plus {
+  background: #262640;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.opp-balance {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.opp-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.os-item {
+  background: #161622;
+  padding: 12px;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.os-l {
+  font-size: 10px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.os-v {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.opp-coins-sect {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.opp-ch {
+  color: #666;
+}
+
+.opp-cb {
+  font-weight: 700;
+}
+
+.text-green.small {
+  font-size: 10px;
+}
+
+.opp-acts {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.pa-btn.small {
+  padding: 8px;
+  font-size: 10px;
+}
+
+.pl-item.small {
+  margin-top: 10px;
+}
+
+/* -----------------------
+   UI: LIQUID STAKE (Yellow)
+   ----------------------- */
+.phone-screen-stake {
+  background: #1a1b26;
+  justify-content: center;
+}
+
+.stake-card.main-stake {
+  background: #111116;
+  border-radius: 24px;
+  padding: 20px;
+  position: relative;
+}
+
+.st-head {
+  background: #191924;
+  border-radius: 16px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.st-icon-lp {
+  width: 24px;
+  height: 24px;
+  background: #6366f1;
+  border-radius: 50%;
+}
+
+.st-info {
+  text-align: left;
+  margin-left: 10px;
+  flex: 1;
+}
+
+.st-l {
+  font-size: 10px;
+  color: #888;
+}
+
+.st-v {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.st-arr {
+  color: #666;
+  font-size: 12px;
+}
+
+.st-row {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #222;
+}
+
+.st-row:last-child {
+  border-bottom: none;
+}
+
+.st-row.active {
+  background: #1f1f2e;
+  margin: 0 -10px;
+  padding: 12px 10px;
+  border-radius: 12px;
+  border-bottom: none;
+  margin-bottom: 5px;
+}
+
+.st-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  margin-right: 12px;
+  font-size: 14px;
+}
+
+.af {
+  background: #60a5fa;
+  color: #000;
+}
+
+.ha {
+  background: #fde047;
+  color: #000;
+}
+
+.vo {
+  background: #a78bfa;
+  color: #fff;
+}
+
+.st-n {
+  text-align: left;
+  font-size: 14px;
+  font-weight: 700;
+  flex: 1;
+}
+
+.st-apy {
+  font-size: 10px;
+  color: #888;
+  font-weight: 400;
+  display: block;
+}
+
+.st-val {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.st-add {
+  width: 24px;
+  height: 24px;
+  background: #222;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: 18px;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .defi-feature-block {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .defi-feature-block.reverse {
+    flex-direction: column;
+  }
+
+  .defi-feature-text {
+    max-width: 100%;
+  }
+
+  .defi-feature-actions {
+    justify-content: center;
+  }
+
+  .defi-hero-title {
+    font-size: 80px;
+  }
+
+  .rocket-left,
+  .pig-right {
+    display: none;
+    /* Hide floating on tablet/mobile if messy */
+  }
+}
+
+@media (max-width: 600px) {
+  .defi-hero-title {
+    font-size: 50px;
+  }
+
+  .defi-section-new {
+    padding: 40px 20px;
+  }
+
+  .defi-phone-mockup {
+    width: 100%;
+    max-width: 300px;
+  }
+}

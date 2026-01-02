@@ -1,0 +1,26 @@
+.intro {
+  position: fixed;
+  inset: 0;
+  background: black;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slush-text {
+  font-size: clamp(80px, 20vw, 260px);
+  font-weight: 900;
+  letter-spacing: -10px;
+  line-height: 1;
+
+  background-size: cover;
+  background-position: center;
+
+  /* TEXT CUTOUT */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  text-transform: uppercase;
+}

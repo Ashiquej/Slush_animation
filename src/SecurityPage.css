@@ -1,0 +1,128 @@
+/* SecurityPage.css */
+
+.security-page-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    background: #000;
+    padding: 20px 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* Gap betwen Hero and Grid */
+}
+
+/* Ensure reusable hero card styles work if not already global */
+/* Assuming PageLayout.css is imported in component */
+
+/* GRID LAYOUT */
+.security-grid {
+    width: 95%;
+    /* Match Hero Width */
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding-bottom: 50px;
+}
+
+/* GRID CARDS */
+.sec-grid-card {
+    border-radius: 40px;
+    height: 600px;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* THEMES */
+.theme-orange {
+    background: #FF4500;
+    /* Deep Orange/Red-Orange match */
+    color: #000;
+}
+
+.theme-white {
+    background: #fff;
+    align-items: center;
+    /* Center visuals */
+}
+
+.theme-yellow {
+    background: #FDE047;
+    color: #000;
+}
+
+.theme-green {
+    background: #62E8A6;
+    color: #000;
+}
+
+.theme-purple {
+    background: #E0C8FF;
+    color: #000;
+}
+
+
+/* TYPOGRAPHY */
+.sec-card-title {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: clamp(50px, 5vw, 80px);
+    /* Large Condensed Type */
+    line-height: 0.9;
+    font-stretch: condensed;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    font-style: italic;
+    /* From images */
+    letter-spacing: -1px;
+}
+
+.sec-card-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    line-height: 1.3;
+    font-weight: 500;
+    max-width: 600px;
+}
+
+/* VISUAL CARDS */
+.visual-card svg {
+    width: 60%;
+    height: auto;
+    filter: drop-shadow(10px 10px 0px rgba(0, 0, 0, 0.1));
+    transition: transform 0.5s ease;
+}
+
+.visual-card:hover svg {
+    transform: scale(1.05) rotate(2deg);
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .security-grid {
+        grid-template-columns: 1fr;
+        /* Stack on mobile */
+    }
+
+    .sec-grid-card {
+        padding: 40px;
+        min-height: 400px;
+    }
+
+    .sec-card-desc {
+        font-size: 18px;
+    }
+
+    .sec-grid-card {
+        padding: 30px 20px;
+        /* Reduced specific padding for mobile */
+        min-height: auto;
+        /* Allow auto height on mobile if content overflows */
+        height: auto;
+    }
+}

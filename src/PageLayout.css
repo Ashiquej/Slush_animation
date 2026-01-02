@@ -1,0 +1,152 @@
+/* PageLayout.css */
+.page-layout-container {
+    width: 100%;
+    min-height: 100vh;
+    background: #000;
+    /* Outer black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-card {
+    width: 95%;
+    max-width: none;
+    margin: 20px auto;
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 100px;
+    background: #fff;
+    border-radius: 40px;
+    /* Rounded card */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Vertically center content */
+    align-items: center;
+    box-shadow: 0 0 0 5px #000 inset;
+    /* Inner border to simulate thick stroke if needed, or just allow outer background to show */
+    /* The provided images show white card with black background. */
+}
+
+.page-content-wrapper {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.page-title {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: clamp(50px, 8vw, 140px);
+    line-height: 0.85;
+    font-stretch: condensed;
+    text-transform: uppercase;
+    color: #000;
+    margin: 0;
+    letter-spacing: -2px;
+    z-index: 5;
+    /* Mix blend mode often used in these styles but stick to black */
+}
+
+.page-actions {
+    display: flex;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.action-btn {
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 40px;
+    padding: 15px 35px;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s;
+    text-decoration: none;
+    color: #000;
+}
+
+.action-btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+.action-btn.primary {
+    /* Optional primary style */
+}
+
+/* Sticker positioning helper styles (can be overridden by inline styles) */
+.sticker {
+    position: absolute;
+    pointer-events: none;
+    z-index: 6;
+    /* Above text? Or below? Images show some overlap. Text is usually black, stickers are colorful. */
+}
+
+/* Header inside card */
+.card-header {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    right: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 20;
+}
+
+.card-logo {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-header-actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.header-launch-btn {
+    background: #000;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.header-plus-btn {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 300;
+    cursor: pointer;
+}

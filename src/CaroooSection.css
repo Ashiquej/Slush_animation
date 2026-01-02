@@ -1,0 +1,211 @@
+/* CAROOO SECTION NEW DESIGN */
+.carooo-section {
+    width: 95%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 100px 0;
+    overflow: hidden;
+    position: relative;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* HEADER */
+.carooo-header-container {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 0 20px;
+}
+
+.carooo-headline {
+    font-family: 'Inter', sans-serif;
+    font-size: 5rem;
+    font-weight: 600;
+    line-height: 1;
+    color: #000;
+    margin-bottom: 40px;
+    letter-spacing: -0.02em;
+}
+
+
+
+/* CAROUSEL WINDOW & TRACK */
+.carooo-carousel-window {
+    width: 100%;
+    overflow: hidden;
+    /* Mask content */
+    padding: 20px 0;
+    /* Vertical breathing room */
+}
+
+.carooo-track {
+    display: flex;
+    gap: 20px;
+    /* Move the track left based on index. 
+       We need to calculate width carefully. 
+       If we want to show ~2.5 cards or just centered logic.
+       Let's try a simple transform logic in JS inline, but css needs to support it.
+    */
+    transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+    padding-left: 5%;
+    /* Start a bit in */
+}
+
+/* CARDS */
+.carooo-card {
+    /* Fixed width to ensure consistency during slide */
+    min-width: 400px;
+    height: 400px;
+    border-radius: 30px;
+    border: 2px solid #000;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    /* Crop images hanging off */
+}
+
+.carooo-card:hover {
+    transform: translateY(-5px);
+}
+
+/* THEMES */
+.carooo-card.orange {
+    background-color: #FF5E1E;
+}
+
+.carooo-card.yellow {
+    background-color: #FDE047;
+}
+
+.carooo-card.blue {
+    background-color: #60A5FA;
+}
+
+.carooo-card.purple {
+    background-color: #E9D5FF;
+}
+
+/* CARD CONTENT */
+.carooo-card-visual {
+    flex: 1;
+    position: relative;
+    /* For absolute positioning of images inside */
+    pointer-events: none;
+}
+
+.carooo-img {
+    position: absolute;
+    /* positioning handled by inline styles or defaults */
+    top: 0;
+    right: 0;
+    object-fit: contain;
+    filter: drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.5));
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.carooo-card-title {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: 3.5rem;
+    line-height: 0.9;
+    text-transform: uppercase;
+    color: #000;
+    margin: 0;
+    font-style: italic;
+    transform: skewX(-5deg);
+    z-index: 2;
+}
+
+.carooo-card-title i {
+    font-style: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    display: block;
+    /* Ensure it breaks to a new line naturally if br is used, or just inherits block-like behavior */
+}
+
+/* ROTATIONS */
+.rot-coin {
+    transform: rotate(15deg);
+}
+
+.rot-phone {
+    transform: rotate(-10deg);
+}
+
+.rot-rocket {
+    transform: rotate(20deg);
+}
+
+.rot-earn {
+    transform: rotate(-5deg);
+}
+
+/* DOTS */
+.carooo-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 12px;
+}
+
+.carooo-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #D1D5DB;
+    /* Grayish */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.carooo-dot.active {
+    background-color: #000;
+    transform: scale(1.2);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .carooo-headline {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .carooo-headline {
+        font-size: 2.5rem;
+    }
+
+    .carooo-card {
+        min-width: 300px;
+        height: 350px;
+    }
+
+    .carooo-card-title {
+        font-size: 2.8rem;
+    }
+
+    .carooo-track {
+        padding-left: 20px;
+    }
+}

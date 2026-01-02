@@ -1,0 +1,141 @@
+/* CARD CAROO SECTION */
+.card-caroo-section {
+    width: 95%;
+    margin: 20px auto;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    /* Allow header above */
+    align-items: center;
+    padding-bottom: 50px;
+    gap: 40px;
+}
+
+.cc-header {
+    color: #fff;
+    /* White text on black bg */
+    font-family: 'Inter', sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card-caroo-card {
+    width: 100%;
+    min-height: 800px;
+    /* Matched 800px height preference */
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 60px 40px;
+    overflow: hidden;
+    transition: background-color 0.5s ease;
+    text-align: center;
+    color: #000;
+}
+
+/* THEMES : Forced Green for now based on request/image */
+.card-caroo-card.green {
+    background: #62E8A6;
+}
+
+.card-caroo-card.yellow {
+    background: #FDE047;
+}
+
+.card-caroo-card.blue {
+    background: #60A5FA;
+}
+
+.card-caroo-card.orange {
+    background: #FF5E1E;
+    /* Reddish Orange from image */
+}
+
+/* NAVIGATION ARROWS */
+.cc-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.2s;
+}
+
+.cc-nav-btn:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+.cc-nav-btn.prev {
+    left: 40px;
+}
+
+.cc-nav-btn.next {
+    right: 40px;
+}
+
+/* PAGINATION DOTS */
+.cc-pagination {
+    position: absolute;
+    bottom: 30px;
+    display: flex;
+    gap: 10px;
+}
+
+.cc-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.cc-dot.active {
+    background: #000;
+    transform: scale(1.2);
+}
+
+/* CONTENT */
+.card-caroo-content {
+    max-width: 800px;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.cc-slide-title {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: clamp(50px, 8vw, 100px);
+    line-height: 0.9;
+    font-style: italic;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.cc-slide-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    max-width: 600px;
+}
+
+.cc-slide-img {
+    height: 220px;
+    width: auto;
+    filter: drop-shadow(10px 10px 0px rgba(0, 0, 0, 0.1));
+}

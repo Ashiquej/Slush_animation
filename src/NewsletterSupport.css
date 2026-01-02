@@ -1,0 +1,264 @@
+.ns-section {
+    width: 95%;
+    margin: 20px auto;
+    /* Aligns with other sections */
+}
+
+.ns-container {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.ns-card {
+    flex: 1;
+    border-radius: 50px;
+    padding: 60px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 600px;
+    /* Increased height */
+}
+
+/* ... existing styles ... */
+
+.ns-btn-3d {
+    background: transparent;
+    border: none;
+    /* Removed border from container */
+    padding: 0;
+    cursor: pointer;
+    perspective: 1000px;
+    height: 50px;
+    /* Enforce height on the button element itself */
+    display: inline-block;
+    /* Prevent collapse */
+    width: fit-content;
+    margin: 0;
+    /* Reset margins */
+}
+
+.ns-flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.4s;
+    transform-style: preserve-3d;
+    display: flex;
+    /* Fix for button sizing */
+    height: 50px;
+    /* Fixed height to prevent collapse */
+    align-items: center;
+    /* Center vertically if needed */
+}
+
+/* On hover of the BUTTON CONTAINER */
+.ns-btn-3d:hover .ns-flip-inner {
+    transform: rotateX(90deg);
+}
+
+.ns-flip-face {
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    /* Positioning */
+}
+
+/* FRONT */
+.ns-flip-face.front {
+    background: #000;
+    color: #fff;
+    transform: translateZ(25px);
+    /* Half of approx height (~50px) */
+    position: relative;
+    z-index: 2;
+}
+
+/* BACK */
+.ns-flip-face.back {
+    background: #fff;
+    color: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotateX(-90deg) translateZ(25px);
+    border: 2px solid #000;
+    box-sizing: border-box;
+}
+
+.ns-btn-3d.black .ns-flip-face.front {
+    background: #000;
+    color: #fff;
+}
+
+.ns-btn-3d.black-outline .ns-flip-face.front {
+    background: #000;
+    color: #fff;
+}
+
+.ns-btn-3d.black-outline .ns-flip-face.back {
+    background: #fff;
+    color: #000;
+}
+
+.ns-btn-3d.black-outline {
+    /* margin-top: auto; removed, handled by container */
+    width: fit-content;
+    height: 50px;
+    /* Match flip inner */
+}
+
+/* TRANSFORM ORIGIN */
+.ns-flip-inner {
+    transform-origin: center center;
+    /* Center of the cube */
+}
+
+.ns-card.yellow {
+    background-color: #ffde2e;
+}
+
+.ns-card.blue {
+    background-color: #4da2ff;
+}
+
+.ns-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.ns-title {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: 64px;
+    line-height: 0.9;
+    font-style: italic;
+    text-transform: uppercase;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.ns-desc {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    line-height: 1.4;
+    color: #000;
+    margin-bottom: 40px;
+    max-width: 80%;
+}
+
+/* GRAPHICS */
+.ns-graphic-plane,
+.ns-graphic-smile {
+    position: absolute;
+    top: 60px;
+    right: 60px;
+    pointer-events: none;
+}
+
+/* Adjust positions based on image? Image shows them inline or floating. 
+   Yellow: Plane is next to text.
+   Blue: Smile is next to text 'TO HELP'. 
+*/
+
+.ns-form {
+    display: flex;
+    gap: 15px;
+    margin-top: auto;
+    /* Push to bottom */
+    /* Push to bottom */
+    margin-bottom: 20px;
+    align-items: center;
+    /* Align input and button vertically */
+}
+
+.ns-input {
+    flex: 1;
+    padding: 15px 25px;
+    border-radius: 30px;
+    border: 2px solid #000;
+    background: #fff;
+    font-size: 16px;
+    outline: none;
+}
+
+.ns-btn {
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    text-transform: uppercase;
+}
+
+.ns-btn.black {
+    background: #000;
+    color: #fff;
+}
+
+.ns-btn.black-outline {
+    background: #000;
+    color: #fff;
+    width: fit-content;
+    /* margin-top: auto; removed */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ns-btn.black-outline .arrow {
+    font-size: 18px;
+}
+
+.ns-checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.ns-checkbox {
+    width: 20px;
+    height: 20px;
+    accent-color: #000;
+    border: 2px solid #000;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .ns-container {
+        flex-direction: column;
+    }
+
+    .ns-title {
+        font-size: 48px;
+    }
+}
+
+.support-btn-wrapper {
+    margin-top: auto;
+    /* Pushes support button to bottom */
+    margin-bottom: 45px;
+    /* Align with ns-form (20px) + Checkbox offset */
+    height: 50px;
+    /* Match form height if needed, or just let button define it */
+    display: flex;
+    align-items: center;
+}

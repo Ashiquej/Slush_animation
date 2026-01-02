@@ -1,0 +1,415 @@
+/* Main Container */
+.get-started-page {
+    width: 95%;
+    /* Reduced width */
+    margin: 20px auto;
+    /* Centered with margin */
+    min-height: 100vh;
+    background: #fff;
+    color: #000;
+    overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
+    padding-bottom: 100px;
+    border-radius: 40px;
+    /* Curve edge like structure */
+}
+
+/* --- NAVIGATION / LOGO --- */
+.gs-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px;
+}
+
+.gs-logo-circle {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: #fff;
+}
+
+.gs-logo-circle img {
+    width: 24px;
+    height: auto;
+}
+
+.gs-nav-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.gs-btn {
+    height: 48px;
+    padding: 0 24px;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 2px solid #000;
+    transition: transform 0.2s, background 0.2s;
+    text-decoration: none;
+    color: #000;
+    background: #fff;
+}
+
+.gs-btn.black {
+    background: #000;
+    color: #fff;
+}
+
+.gs-btn:hover {
+    transform: translateY(-2px);
+}
+
+.gs-btn-icon {
+    width: 20px;
+    margin-right: 8px;
+}
+
+/* --- HERO SECTION --- */
+.gs-hero {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.gs-hero-title {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: clamp(60px, 8vw, 110px);
+    line-height: 0.9;
+    text-transform: uppercase;
+    font-style: italic;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+    letter-spacing: -2px;
+}
+
+.gs-hero-sub {
+    font-size: 24px;
+    max-width: 600px;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+.gs-hero-actions {
+    display: flex;
+    gap: 20px;
+    z-index: 2;
+    margin-top: 20px;
+}
+
+.hero-sticker {
+    position: absolute;
+    z-index: 3;
+    filter: drop-shadow(4px 4px 0px rgba(0, 0, 0, 1));
+}
+
+/* --- FEATURE SECTIONS --- */
+.gs-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 5%;
+    position: relative;
+}
+
+.gs-section-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    gap: 80px;
+}
+
+.gs-section.reverse .gs-section-content {
+    flex-direction: row-reverse;
+}
+
+/* TEXT CONTENT */
+.gs-text-col {
+    flex: 1;
+    max-width: 500px;
+}
+
+.gs-section-title {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: clamp(50px, 6vw, 85px);
+    line-height: 0.9;
+    font-style: italic;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    letter-spacing: -1px;
+}
+
+.gs-section-desc {
+    font-size: 22px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+/* VISUAL CONTENT (Phone + Blob) */
+.gs-visual-col {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.gs-blob-bg {
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    z-index: 0;
+    border-radius: 40px;
+}
+
+/* THEMES */
+.theme-blue .gs-blob-bg {
+    background: #E0F2FE;
+}
+
+/* Light Blue */
+.theme-yellow .gs-blob-bg {
+    background: #FEF9C3;
+}
+
+/* Light Yellow */
+.theme-green .gs-blob-bg {
+    background: #DCFCE7;
+}
+
+/* Light Green */
+.theme-purple .gs-blob-bg {
+    background: #F3E8FF;
+}
+
+/* Light Purple */
+
+/* PHONE MOCKUP CSS */
+.gs-phone {
+    width: 320px;
+    height: 650px;
+    background: #000;
+    border-radius: 50px;
+    border: 12px solid #000;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.gs-phone-notch {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 30px;
+    background: #000;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    z-index: 10;
+}
+
+/* PHONE SCREEN CONTENT VARIATIONS */
+.screen-content {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    color: #fff;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Sign In Screen */
+.screen-signin {
+    background: linear-gradient(180deg, #1a1a1a 0%, #3B82F6 100%);
+}
+
+.signin-text {
+    font-family: 'Impact', sans-serif;
+    font-size: 40px;
+    line-height: 1;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.signin-btns {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+    .gs-nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .gs-phone {
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+        aspect-ratio: 320/650;
+    }
+
+    .gs-section {
+        padding: 40px 20px;
+    }
+}
+
+
+.signin-btn {
+    background: rgba(255, 255, 255, 0.2);
+    height: 40px;
+    border-radius: 20px;
+    width: 100%;
+}
+
+/* Fund Screen */
+.screen-fund {
+    background: #0F172A;
+    justify-content: flex-start;
+    padding-top: 100px;
+}
+
+.fund-amount {
+    margin-top: 40px;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.fund-sub {
+    font-size: 18px;
+    opacity: 0.7;
+    margin-bottom: 60px;
+}
+
+.fund-actions {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+}
+
+.fund-action-btn {
+    width: 60px;
+    height: 60px;
+    background: #334155;
+    border-radius: 20px;
+}
+
+/* Transact Screen */
+.screen-transact {
+    background: #000;
+    justify-content: center;
+}
+
+.transact-qr {
+    width: 200px;
+    height: 200px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+.transact-btn {
+    background: #62E8A6;
+    color: #000;
+    font-weight: bold;
+    padding: 12px 30px;
+    border-radius: 24px;
+    width: 100%;
+}
+
+/* Explore Screen */
+.screen-explore {
+    background: #1e1e1e;
+    padding: 20px;
+    justify-content: flex-start;
+    padding-top: 80px;
+}
+
+.explore-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+}
+
+.explore-item {
+    aspect-ratio: 1;
+    background: #333;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.explore-item:nth-child(1) {
+    background: #E0C8FF;
+}
+
+.explore-item:nth-child(2) {
+    background: #FFC0CB;
+}
+
+.explore-item:nth-child(3) {
+    background: #3B82F6;
+}
+
+.explore-item:nth-child(4) {
+    background: #EF4444;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+
+    .gs-section-content,
+    .gs-section.reverse .gs-section-content {
+        flex-direction: column-reverse;
+        /* Text on top for mobile usually, but keeping image top might be better? Let's stick to text bottom for now */
+        gap: 40px;
+        text-align: center;
+    }
+
+    .gs-section {
+        padding: 40px 20px;
+    }
+
+    .gs-text-col {
+        max-width: 100%;
+    }
+
+    .gs-hero-title {
+        font-size: 50px;
+    }
+}

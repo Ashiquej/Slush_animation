@@ -1,0 +1,830 @@
+/* =====================
+   THEME VARIABLES
+===================== */
+:root {
+  --slush-bg: #eaf4ff;
+  --slush-blue: #1e90ff;
+  --slush-deep-blue: #0b6fd6;
+  --slush-black: #000;
+  --slush-white: #fff;
+  --slush-lavender: #e9c8ff;
+}
+
+/* RESET */
+body {
+  margin: 0;
+  /* background: var(--slush-bg); Removed to allow black */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+}
+
+/* MARQUEE */
+.marquee {
+  background: var(--slush-lavender);
+  padding: 6px 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--slush-black);
+}
+
+/* HERO */
+.hero {
+  width: 95%;
+  min-height: 160vh;
+  margin: 90px auto 0;
+  border-radius: 26px;
+  position: relative;
+  overflow: hidden;
+  background: var(--slush-bg);
+}
+
+/* BACKGROUND IMAGE */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* SLUSH WRAPPER */
+.slush-wrap {
+  position: relative;
+  margin-top: 100px;
+  text-align: center;
+  z-index: 2;
+}
+
+/* STATIC SLUSH */
+.slush-static {
+  font-size: clamp(180px, 22vw, 380px);
+  font-weight: 900;
+  letter-spacing: -14px;
+  color: var(--slush-black);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(40px);
+}
+
+/* SVG */
+.slush-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.slush-svg-text {
+  font-size: 320px;
+  font-weight: 900;
+  fill: var(--slush-black);
+  letter-spacing: -14px;
+}
+
+/* FLOATING ICONS */
+.float {
+  position: absolute;
+  font-size: 42px;
+  pointer-events: none;
+  filter: drop-shadow(0 6px 0 rgba(0, 0, 0, 0.15));
+}
+
+.rocket {
+  top: 8%;
+  left: 14%;
+}
+
+.coin {
+  bottom: 12%;
+  left: 22%;
+}
+
+.smile {
+  top: 14%;
+  right: 18%;
+}
+
+/* SUBTEXT */
+.hero-sub {
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--slush-black);
+  margin-top: -20px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+}
+
+/* ACTIONS */
+.hero-actions {
+  display: flex;
+  gap: 24px;
+  margin-top: 32px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* =====================
+   3D FLIP BUTTONS
+===================== */
+.flip-btn {
+  perspective: 1200px;
+  transform: translateY(20px) scale(0.95);
+  opacity: 0;
+}
+
+.flip-inner {
+  width: 210px;
+  height: 52px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(.34, 1.56, .64, 1);
+}
+
+.flip-btn:hover .flip-inner {
+  transform: rotateX(180deg) scale(1.06);
+}
+
+/* BUTTON FACES */
+.flip-face {
+  position: absolute;
+  inset: 0;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  backface-visibility: hidden;
+  border: 1.5px solid var(--slush-black);
+  background: var(--slush-white);
+  color: var(--slush-black);
+}
+
+/* DARK PRIMARY */
+.flip-btn.dark .flip-face.front {
+  background: var(--slush-black);
+  color: var(--slush-white);
+}
+
+/* BACK FACE */
+.flip-face.back {
+  background: linear-gradient(135deg,
+      var(--slush-blue),
+      var(--slush-deep-blue));
+  color: var(--slush-white);
+  transform: rotateX(180deg);
+  border-color: transparent;
+}
+
+/* =====================
+   NOISE OVERLAY
+===================== */
+.noise {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.flip-btn:active .flip-inner {
+  transform: rotateX(180deg) scale(0.98);
+}
+
+/* =========================
+   FIX BUTTON VISIBILITY
+========================= */
+.hero-sub {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-actions {
+  position: relative;
+  z-index: 2;
+}
+
+/* Buttons themselves */
+.flip-btn {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-bg {
+  z-index: 0;
+}
+
+.slush-wrap,
+.hero-sub,
+.hero-actions {
+  z-index: 2;
+}
+
+/* RESET */
+body {
+  margin: 0;
+  background: #eaf4ff;
+  font-family: system-ui, -apple-system;
+}
+
+/* MARQUEE */
+.marquee {
+  background: #e9c8ff;
+  padding: 6px 0;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* HERO */
+.hero {
+  width: 95%;
+  min-height: 160vh;
+  margin: 90px auto 0;
+  border-radius: 26px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* BACKGROUND IMAGE */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* SLUSH WRAPPER */
+.slush-wrap {
+  position: relative;
+  margin-top: 100px;
+  text-align: center;
+  z-index: 3;
+}
+
+/* STATIC SLUSH */
+.slush-static {
+  font-size: clamp(180px, 22vw, 380px);
+  font-weight: 900;
+  letter-spacing: -14px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(40px);
+}
+
+/* SVG CUTOUT */
+.slush-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.slush-svg-text {
+  font-size: 320px;
+  font-weight: 900;
+  fill: black;
+  letter-spacing: -14px;
+}
+
+/* FLOATING ICONS */
+.float {
+  position: absolute;
+  font-size: 42px;
+  z-index: 4;
+}
+
+.rocket {
+  top: 8%;
+  left: 14%;
+}
+
+.coin {
+  bottom: 12%;
+  left: 22%;
+}
+
+.smile {
+  top: 14%;
+  right: 18%;
+}
+
+/* SUBTEXT */
+.hero-sub {
+  font-size: 32px;
+  margin-top: -20px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  position: relative;
+  z-index: 4;
+}
+
+/* ACTIONS */
+.hero-actions {
+  display: flex;
+  gap: 24px;
+  margin-top: 32px;
+  opacity: 0;
+  visibility: hidden;
+  position: relative;
+  z-index: 4;
+}
+
+/* 3D FLIP BUTTON */
+.flip-btn {
+  perspective: 1200px;
+  transform: translateY(20px);
+  opacity: 0;
+  position: relative;
+  z-index: 5;
+}
+
+.flip-inner {
+  width: 210px;
+  height: 52px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(.34, 1.56, .64, 1);
+}
+
+.flip-btn:hover .flip-inner {
+  transform: rotateX(180deg) scale(1.06);
+}
+
+.flip-face {
+  position: absolute;
+  inset: 0;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  backface-visibility: hidden;
+  border: 1.5px solid #000;
+  background: #fff;
+}
+
+.flip-btn.dark .flip-face.front {
+  background: #000;
+  color: #fff;
+}
+
+.flip-face.back {
+  background: linear-gradient(135deg, #1e90ff, #0b6fd6);
+  color: #fff;
+  transform: rotateX(180deg);
+}
+
+/* NOISE */
+.noise {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+}
+
+/* =========================
+   FINAL BUTTON VISIBILITY FIX
+========================= */
+
+/* Hero must allow buttons */
+.hero {
+  overflow: visible;
+}
+
+/* Force container visible */
+.hero-actions {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Ensure buttons render */
+.flip-btn {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1);
+}
+
+/* SVG must stay behind */
+.slush-svg {
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Content always above */
+.slush-wrap,
+.hero-sub,
+.hero-actions {
+  position: relative;
+  z-index: 5;
+}
+
+/* =========================
+   CENTER BUTTONS
+========================= */
+.hero-actions {
+  justify-content: center;
+}
+
+/* =========================
+   SCALE HIDING SUPPORT
+========================= */
+.hero-actions {
+  transform-origin: top center;
+}
+
+/* FLOAT IMAGE FIX */
+.float img {
+  width: 64px;
+  height: auto;
+  display: block;
+}
+
+/* ALIGNMENT LIKE REFERENCE */
+.rocket {
+  top: 12%;
+  left: 18%;
+}
+
+.smile {
+  top: 16%;
+  right: 22%;
+}
+
+.wallet {
+  right: 14%;
+  top: 44%;
+}
+
+.coin {
+  left: 22%;
+  bottom: 18%;
+}
+
+/* GPU SMOOTHNESS */
+.float,
+.float img {
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+/* =========================
+   NEW SVG ANIMATION SUPPORT
+========================= */
+.float img {
+  width: 64px;
+  height: auto;
+  display: block;
+  transform-origin: center;
+  will-change: transform;
+}
+
+/* POSITION MATCH IMAGE */
+.rocket {
+  top: 12%;
+  left: 18%;
+}
+
+.smile {
+  top: 16%;
+  right: 22%;
+}
+
+.wallet {
+  right: 14%;
+  top: 44%;
+}
+
+.coin {
+  left: 22%;
+  bottom: 18%;
+}
+
+/* GPU SMOOTHNESS */
+.float,
+.float img {
+  transform-style: preserve-3d;
+}
+
+/* =========================
+   SECOND SLUSH CONTENT
+========================= */
+
+.slush-section-2 {
+  position: relative;
+  margin-top: 180px;
+  padding-bottom: 200px;
+  z-index: 4;
+}
+
+.slush-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.slush-big-text {
+  font-size: clamp(60px, 9vw, 140px);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -6px;
+  color: #000;
+}
+
+.slush-big-text.thin {
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+.slush-big-text span {
+  display: inline-block;
+  transform: translateY(-10px);
+}
+
+/* CARD */
+.slush-card {
+  margin-top: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  background: #635bff;
+  color: #fff;
+  padding: 18px 28px;
+  border-radius: 18px;
+}
+
+.slush-card img {
+  width: 60px;
+}
+
+.slush-card-text p {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   SLUSH SECOND CONTENT – CLEAN ALIGNMENT
+========================= */
+
+/* =========================
+   SLUSH SECOND CONTENT – BOLD & IMPACTFUL
+========================= */
+
+.slush-second-wrap {
+  margin-top: 50vh;
+  /* Pushed down initially */
+  padding-bottom: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 6;
+  position: relative;
+}
+
+/* COMMON LINE STYLE */
+.slush-line {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* TEXT STYLE (Big, Bold, Italic, Tall) */
+.slush-word {
+  font-size: clamp(60px, 9vw, 130px);
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
+  color: #000;
+  line-height: 1.3;
+  /* Increased further to ensure no overlap */
+  transform: scaleY(1.35);
+  /* Extremely tall */
+  transform-origin: bottom center;
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  letter-spacing: -3px;
+  display: inline-block;
+}
+
+/* ICONS GENERAL */
+.slush-inline-icon,
+.slush-wallet-icon {
+  width: clamp(60px, 8vw, 110px) !important;
+  height: auto !important;
+  display: block;
+}
+
+/* SPECIFIC ICON ROTATIONS */
+.icon-coin {
+  transform: rotate(15deg) translateY(-15px);
+  margin: 0 15px;
+}
+
+.icon-tick {
+  transform: rotate(-12deg) translateY(5px);
+  margin-right: 25px;
+}
+
+.icon-wallet {
+  transform: rotate(18deg) translateY(0px);
+  margin-left: 20px;
+}
+
+/* LINE 2 ADJUSTMENTS */
+.slush-line-2 {
+  margin-top: 35px;
+  align-items: center;
+}
+
+.slush-line-3 {
+  margin-top: 10px;
+}
+
+/* DOWNLOAD BUTTON / CARD */
+.qr-download {
+  position: relative;
+  width: 280px;
+  height: 90px;
+  background: #635bff;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  margin-left: 35px;
+  box-shadow: 0 10px 20px rgba(99, 91, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* QR Code Box - Initial State */
+.qr-download img {
+  position: absolute;
+  left: 12px;
+  width: 66px !important;
+  height: 66px !important;
+  background: #fff;
+  padding: 8px;
+  border-radius: 12px;
+  z-index: 2;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Text - Initial State */
+.qr-download span {
+  position: absolute;
+  right: 40px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+  z-index: 1;
+  font-family: sans-serif;
+  transition: all 0.5s ease;
+}
+
+/* HOVER EFFECTS - MOVEMENT */
+
+/* QR Moves to Right */
+.qr-download:hover img {
+  left: calc(100% - 78px);
+  /* Move to right side */
+  transform: rotate(360deg);
+}
+
+/* Text Moves Right & Disappears */
+.qr-download:hover span {
+  transform: translateX(100px);
+  opacity: 0;
+}
+
+/* Text Reappears from Left */
+.qr-download::after {
+  content: "DOWNLOAD";
+  position: absolute;
+  left: -150px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+  z-index: 1;
+  transition: all 0.5s ease;
+  transition-delay: 0.1s;
+}
+
+.qr-download:hover::after {
+  left: 40px;
+  /* Slide in to visible position */
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+/* 1. COIN GLOW */
+@keyframes coinGlow {
+
+  0%,
+  100% {
+    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.4));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.9));
+  }
+}
+
+.coin-glow {
+  animation: coinGlow 2s infinite ease-in-out;
+}
+
+
+/* 4. TICK POP UP EFFECT */
+@keyframes tickPop {
+
+  0%,
+  100% {
+    transform: scale(1) rotate(-12deg);
+  }
+
+  50% {
+    transform: scale(1.15) rotate(-12deg);
+  }
+}
+
+.tick-pop {
+  animation: tickPop 2s infinite cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-origin: center;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+  .slush-static {
+    font-size: clamp(80px, 15vw, 150px);
+  }
+
+  .slush-svg-text {
+    font-size: clamp(80px, 15vw, 150px);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .slush-word {
+    font-size: clamp(40px, 10vw, 80px);
+    transform: scaleY(1.1);
+    /* Reduce scaling on mobile */
+  }
+
+  .slush-line {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .qr-download {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  /* Make floating icons smaller and less intrusive */
+  .float {
+    font-size: 24px;
+    opacity: 0.5;
+  }
+
+  .float img {
+    width: 40px;
+  }
+
+  /* Adjust positions slightly to avoid center text */
+  .rocket {
+    top: 5%;
+    left: 5%;
+  }
+
+  .smile {
+    top: 5%;
+    right: 5%;
+  }
+
+  .wallet {
+    top: auto;
+    bottom: 10%;
+    right: 5%;
+  }
+
+  .coin {
+    bottom: 10%;
+    left: 5%;
+  }
+}

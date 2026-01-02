@@ -1,0 +1,88 @@
+.app-container {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.page-content {
+    width: 100%;
+    min-height: 100vh;
+    background: transparent;
+    /* Show black body */
+}
+
+.transition-container-3d {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    overflow: hidden;
+    z-index: 1000;
+    perspective: 2000px;
+    /* Viewport depth */
+}
+
+.track-3d {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: max-content;
+    /* Allow growing */
+    margin: 0;
+    padding: 0;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.deck-card {
+    width: 100vw;
+    height: 100vh;
+    flex-shrink: 0;
+    margin-right: -5px;
+    /* Overlap for touching type */
+    background: #fff;
+    overflow: hidden;
+    /* Content clip */
+
+    /* Removed default scale(0.6). We start at scale(1) and move Z back. */
+    transform: scale(1);
+
+    position: relative;
+    transform-origin: center center;
+    backface-visibility: hidden;
+
+    /* Remove border-radius default? */
+    /* User: "zoom out... attachment always". 
+       If we have rounded corners, attachment at corners breaks (black gaps).
+       We should probably remove border-radius or reduce it significantly if they want "attached".
+       Or keep it small.
+       If visual request shows corners, we keep them.
+       But "attached" usually implies full edge contact. 
+       I will set border-radius to 0 initially or very small.
+    */
+    border-radius: 0;
+}
+
+/* We can add border-radius DURING zoom if requested, but "attached" conflicts with big rounded corners usually.
+   I'll keep it 0 or standard. 
+   Wait, previous code had 60px.
+   If cards are rectangular and attached, they look like a film strip.
+   If they have corners and are attached, there are diamond gaps.
+   "without blank... attachment... always".
+   I will use 0px border-radius to ensure full attachment.
+*/
+
+.active-card {
+    /* No override needed */
+}
+
+.target-card {
+    background-color: #fff;
+}
+
+.card-content {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}

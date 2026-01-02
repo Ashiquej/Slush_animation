@@ -1,0 +1,111 @@
+/* 3D Flip Button Styles */
+.flip-btn-wrap {
+    /* Default Size - can be overridden by className or style */
+    width: auto;
+    height: 50px;
+    perspective: 1000px;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 999px;
+    /* Pill shape default */
+}
+
+.flip-btn-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    transform-style: preserve-3d;
+    transform-origin: center center;
+}
+
+.flip-btn-wrap:hover .flip-btn-inner {
+    transform: rotateX(90deg);
+    /* Flip Up */
+}
+
+.flip-btn-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: inherit;
+    /* Inherit from wrap */
+    padding: 0 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+/* Front Face (Primary Color usually) */
+.flip-btn-face.front {
+    z-index: 2;
+    background: #000;
+    color: #fff;
+    /* Translate Z = Half Height. Assuming 50px height -> 25px */
+    transform: translateZ(25px);
+}
+
+/* Back Face (White usually) */
+.flip-btn-face.back {
+    background: #fff;
+    color: #000;
+    border: 2px solid #000;
+    /* Rotate -90deg to be on the "bottom" face, looking down.
+       When inner rotates +90, this comes to front. */
+    transform: rotateX(-90deg) translateZ(25px);
+}
+
+/* Custom/Utility Classes for different sizes/colors if needed */
+.flip-btn-wrap.large {
+    height: 60px;
+}
+
+.flip-btn-wrap.large .flip-btn-face.front,
+.flip-btn-wrap.large .flip-btn-face.back {
+    transform: translateZ(30px) !important;
+}
+
+.flip-btn-wrap.large .flip-btn-face.back {
+    transform: rotateX(-90deg) translateZ(30px) !important;
+}
+
+.flip-btn-wrap.small {
+    height: 40px;
+}
+
+.flip-btn-wrap.small .flip-btn-face.front,
+.flip-btn-wrap.small .flip-btn-face.back {
+    font-size: 14px;
+    transform: translateZ(20px) !important;
+}
+
+.flip-btn-wrap.small .flip-btn-face.back {
+    transform: rotateX(-90deg) translateZ(20px) !important;
+}
+
+/* Style Variants */
+.flip-btn-wrap.blue .flip-btn-face.front {
+    background: #5CACFF;
+    color: #000;
+}
+
+.flip-btn-wrap.white .flip-btn-face.front {
+    background: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.flip-btn-wrap.white .flip-btn-face.back {
+    background: #000;
+    color: #fff;
+    border: none;
+}

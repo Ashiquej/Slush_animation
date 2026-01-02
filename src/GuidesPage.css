@@ -1,0 +1,259 @@
+.guides-page {
+    width: 95%;
+    margin: 20px auto;
+    min-height: 100vh;
+    background: #fff;
+    color: #000;
+    overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
+    padding-bottom: 100px;
+    border-radius: 40px;
+}
+
+.guides-hero {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.guides-hero-title {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: clamp(60px, 12vw, 150px);
+    line-height: 0.8;
+    text-transform: uppercase;
+    font-style: auto;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+    letter-spacing: -2px;
+}
+
+.guides-sticker {
+    position: absolute;
+    z-index: 3;
+    filter: drop-shadow(4px 4px 0px rgba(0, 0, 0, 1));
+}
+
+.guides-hero-actions {
+    display: flex;
+    gap: 20px;
+    z-index: 2;
+    margin-top: 20px;
+}
+
+.guides-btn {
+    height: 60px;
+    padding: 0 32px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 2px solid #000;
+    transition: transform 0.2s, background 0.2s;
+    text-decoration: none;
+    color: #000;
+    background: #fff;
+    gap: 10px;
+}
+
+.guides-btn:hover {
+    transform: scale(1.05);
+}
+
+/* GRID LAYOUT */
+.guides-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Let content (aspect-ratio) dictate height, don't force stretch */
+    grid-auto-rows: auto;
+    gap: 20px;
+    width: 95%;
+    margin: 0 auto 60px;
+    max-width: 1400px;
+}
+
+.guide-card {
+    border-radius: 40px;
+    padding: 30px;
+    border: 3px solid #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+    aspect-ratio: 1 / 1;
+    /* Force Square */
+    width: 100%;
+}
+
+.guide-card:hover {
+    transform: translateY(-5px);
+}
+
+.guide-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    cursor: pointer;
+}
+
+.guide-card-icon {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.guide-card-text {
+    font-size: 24px;
+    font-weight: 700;
+    text-align: left;
+    color: #000;
+    margin-left: 10px;
+}
+
+/* Specific Card Themes */
+.theme-blue-dark {
+    background-color: #5C54F3;
+    /* Purple/Blue */
+}
+
+.theme-yellow {
+    background-color: #FFD600;
+}
+
+.theme-blue-light {
+    background-color: #92C5FD;
+}
+
+.theme-purple-light {
+    background-color: #E0C8FF;
+}
+
+.theme-orange {
+    background-color: #FF5500;
+}
+
+.theme-green {
+    background-color: #62E8A6;
+}
+
+/* Card Content Styling */
+
+/* Broken Coin */
+.broken-coin {
+    width: 180px;
+    height: 180px;
+}
+
+/* User Arrows */
+.user-arrows {
+    width: 180px;
+    height: 140px;
+}
+
+/* Phone Mockups inside Cards */
+.guide-phone-mock {
+    width: 220px;
+    height: 400px;
+    background: #000;
+    border-radius: 30px;
+    border: 8px solid #000;
+    margin-top: 40px;
+    /* Push down to be cut off if needed */
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.guide-phone-screen {
+    width: 100%;
+    height: 100%;
+    background: #111;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Learn More Pill */
+.learn-more-pill {
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    background: #fff;
+    border: 2px solid #000;
+    padding: 8px 30px;
+    border-radius: 20px;
+    transform: rotate(0deg);
+    font-weight: 800;
+    font-size: 12px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 #000;
+    z-index: 10;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .guides-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .guides-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .guides-hero-title {
+        font-size: 70px;
+    }
+
+    .guides-hero-actions {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .guide-card-wrapper {
+        width: 100%;
+    }
+
+    .guide-card {
+        padding: 20px;
+    }
+}
+
+/* Custom Cursor Follower */
+.cursor-follower {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: auto;
+    padding: 8px 16px;
+    background: white;
+    color: black;
+    border: 2px solid black;
+    border-radius: 50px;
+    font-weight: 900;
+    font-size: 14px;
+    text-transform: uppercase;
+    pointer-events: none;
+    /* Ignore mouse events so it doesn't block hovering */
+    z-index: 9999;
+    /* Center the pivot point */
+    /* transform: translate(-50%, -50%) scale(0); REMOVED - Handled by GSAP */
+    opacity: 0;
+    white-space: nowrap;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

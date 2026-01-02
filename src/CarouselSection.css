@@ -1,0 +1,178 @@
+/* CAROUSEL SECTION NEW */
+.carousel-section-new {
+    width: 95%;
+    margin: 20px auto;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.carousel-big-card {
+    width: 100%;
+    min-height: 800px;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 60px 40px;
+    overflow: hidden;
+    transition: background-color 0.5s ease;
+    text-align: center;
+    color: #000;
+}
+
+/* THEMES */
+.carousel-big-card.green {
+    background: #62E8A6;
+}
+
+.carousel-big-card.yellow {
+    background: #FDE047;
+}
+
+.carousel-big-card.orange {
+    background: #FF5E1E;
+}
+
+.carousel-big-card.blue {
+    background: #60A5FA;
+}
+
+/* NAVIGATION ARROWS */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.2s;
+}
+
+.nav-btn:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+.nav-btn.prev {
+    left: 30px;
+}
+
+.nav-btn.next {
+    right: 30px;
+}
+
+/* CONTENT */
+.carousel-content {
+    max-width: 800px;
+    /* animation: fadeIn 0.5s ease forwards; -> Removed to let GSAP handle it */
+    opacity: 0;
+    /* Star hidden for GSAP */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cc-title {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: clamp(40px, 8vw, 85px);
+    line-height: 0.9;
+    font-style: italic;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: -2px;
+}
+
+.cc-desc {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cc-visual {
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-img-c {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.5));
+}
+
+/* ANIMATIONS */
+.floating {
+    animation: float 3s ease-in-out infinite;
+}
+
+.delay-1 {
+    animation-delay: 0.5s;
+}
+
+.delay-2 {
+    animation-delay: 1s;
+}
+
+.delay-3 {
+    animation-delay: 1.5s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* .rocket-rot removed or used inline if needed */
+
+/* DOTS */
+.carousel-dots-bottom {
+    position: absolute;
+    bottom: 30px;
+    display: flex;
+    gap: 10px;
+}
+
+.dot-b {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.dot-b.active {
+    background: #000;
+    transform: scale(1.3);
+}
